@@ -30,6 +30,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.List;
@@ -42,6 +43,7 @@ import java.util.Random;
  * @Date: 2023/8/4 23:47
  * @Version: 3.4.0
  */
+@Component
 @Slf4j
 public class MockJob extends QuartzJobBean {
 

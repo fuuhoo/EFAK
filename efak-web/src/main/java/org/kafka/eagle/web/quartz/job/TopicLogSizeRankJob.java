@@ -33,6 +33,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +46,7 @@ import java.util.Map;
  * @Date: 2023/8/14 16:04
  * @Version: 3.4.0
  */
+@Component
 @Slf4j
 public class TopicLogSizeRankJob extends QuartzJobBean {
 

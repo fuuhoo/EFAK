@@ -32,6 +32,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,7 @@ import java.util.stream.Collectors;
  * @Date: 2023/7/16 09:09
  * @Version: 3.4.0
  */
+@Component
 @Slf4j
 public class ConsumerGroupJob extends QuartzJobBean {
 

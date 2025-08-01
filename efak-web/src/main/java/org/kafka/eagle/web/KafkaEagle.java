@@ -54,6 +54,11 @@ public class KafkaEagle {
     private String dbDriverName;
 
     public static void main(String[] args) {
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//        } catch (ClassNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
         SpringApplication application=new SpringApplication(KafkaEagle.class);
         application.setBannerMode(Banner.Mode.OFF);
         application.run(args);

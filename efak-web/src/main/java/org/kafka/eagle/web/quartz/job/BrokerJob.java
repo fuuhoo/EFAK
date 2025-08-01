@@ -31,6 +31,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,7 @@ import java.util.List;
  * @Date: 2023/7/15 10:31
  * @Version: 3.4.0
  */
+@Component
 @Slf4j
 public class BrokerJob extends QuartzJobBean {
 

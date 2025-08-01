@@ -364,3 +364,6 @@ CREATE TABLE IF NOT EXISTS ke_alert_channel (
   INDEX idx_channel_user (channel_user),
   INDEX idx_channel_name_type (channel_name,channel_type)
 ) COMMENT 'Alert Channel info' CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- INSERT INTO ke.ke_users_info (username,password,origin_password,roles,modify_time) VALUES ('admin','$2a$10$0T854FKJ1Y8moYNI2jXIKOombQ1pHtAP8uLBUugDxFTNcfS1PwxJO','123456','ROLE_ADMIN',now());

@@ -41,6 +41,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
@@ -51,6 +52,7 @@ import java.util.*;
  * @Date: 2023/8/14 16:04
  * @Version: 3.4.0
  */
+@Component
 @Slf4j
 public class TopicByteOutRankJob extends QuartzJobBean {
 
