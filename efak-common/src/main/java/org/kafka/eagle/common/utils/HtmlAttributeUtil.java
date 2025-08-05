@@ -92,7 +92,8 @@ public class HtmlAttributeUtil {
             String msg="告警("+brokerSpread+"%)";
             result = "<span class='badge bg-danger'>"+msg+"</span>";
         } else if (brokerSpread >= KConstants.Topic.TOPIC_BROKER_SPREAD_NORMAL) {
-            result = "<span class='badge bg-success'>健康</span>";
+            String msg="健康("+brokerSpread+"%)";
+            result = "<span class='badge bg-success'>"+msg+"</span>";
         } else {
             result = "<span class='badge bg-secondary'>未知</span>";
         }
