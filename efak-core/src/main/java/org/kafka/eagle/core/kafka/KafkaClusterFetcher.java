@@ -69,6 +69,7 @@ public class KafkaClusterFetcher {
 
             brokerInfo.setBrokerHost(initializeInfo.getHost());
             brokerInfo.setBrokerJmxPort(initializeInfo.getPort());
+            //判断telnet通不通
             brokerInfo.setBrokerJmxPortStatus(getBrokerStatus(initializeInfo.getHost(), initializeInfo.getPort()));
             if (brokerInfo.getBrokerJmxPortStatus() == 1) {
                 JMXServiceURL jmxSeriverUrl = new JMXServiceURL(String.format(JMX, initializeInfo.getHost() + ":" + initializeInfo.getPort()));
@@ -92,6 +93,7 @@ public class KafkaClusterFetcher {
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             log.error("Get kafka version from jmx has error, JMXInitializeInfo[{}], error msg is {}", initializeInfo, e);
         } finally {
             if (connector != null) {

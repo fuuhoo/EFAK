@@ -64,11 +64,18 @@ public class BrokerDaoServiceImpl extends ServiceImpl<BrokerDaoMapper, BrokerInf
     @Override
     public boolean insert(BrokerInfo brokerInfo) {
         boolean status = false;
-        int code = this.brokerDaoMapper.insert(brokerInfo);
-        if (code > 0) {
-            status = true;
+        try {
+            int code = this.brokerDaoMapper.insert(brokerInfo);
+            if (code > 0) {
+                status = true;
+            }
+            return status;
+        }catch (Exception e){
+            e.printStackTrace();
+            log.error("获取broker失败:"+e.getMessage());
+            return false;
+
         }
-        return status;
     }
 
     @Override
