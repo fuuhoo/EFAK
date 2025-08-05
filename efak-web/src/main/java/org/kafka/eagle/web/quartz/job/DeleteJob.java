@@ -20,6 +20,7 @@ package org.kafka.eagle.web.quartz.job;
 import lombok.extern.slf4j.Slf4j;
 import org.kafka.eagle.common.utils.CalendarUtil;
 import org.kafka.eagle.pojo.topic.TopicSummaryInfo;
+import org.kafka.eagle.web.annotation.QuartzJob;
 import org.kafka.eagle.web.service.IAuditDaoService;
 import org.kafka.eagle.web.service.ITopicSummaryDaoService;
 import org.quartz.JobExecutionContext;
@@ -40,6 +41,7 @@ import java.util.List;
  */
 @Component
 @Slf4j
+@QuartzJob(group = "INIT_GROUP", cron = "0 * * * * ?")
 public class DeleteJob extends QuartzJobBean {
 
 

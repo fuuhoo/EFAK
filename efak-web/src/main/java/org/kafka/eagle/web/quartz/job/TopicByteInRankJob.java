@@ -33,6 +33,7 @@ import org.kafka.eagle.pojo.cluster.KafkaClientInfo;
 import org.kafka.eagle.pojo.kafka.JMXInitializeInfo;
 import org.kafka.eagle.pojo.topic.MBeanInfo;
 import org.kafka.eagle.pojo.topic.TopicRankInfo;
+import org.kafka.eagle.web.annotation.QuartzJob;
 import org.kafka.eagle.web.service.IBrokerDaoService;
 import org.kafka.eagle.web.service.IClusterCreateDaoService;
 import org.kafka.eagle.web.service.IClusterDaoService;
@@ -54,6 +55,7 @@ import java.util.*;
  */
 @Component
 @Slf4j
+@QuartzJob(group = "INIT_GROUP", cron = "0 * * * * ?")
 public class TopicByteInRankJob extends QuartzJobBean {
 
     @Autowired

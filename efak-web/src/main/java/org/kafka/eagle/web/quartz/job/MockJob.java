@@ -24,6 +24,7 @@ import org.kafka.eagle.core.kafka.KafkaStoragePlugin;
 import org.kafka.eagle.pojo.cluster.BrokerInfo;
 import org.kafka.eagle.pojo.cluster.ClusterInfo;
 import org.kafka.eagle.pojo.cluster.KafkaClientInfo;
+import org.kafka.eagle.web.annotation.QuartzJob;
 import org.kafka.eagle.web.service.IBrokerDaoService;
 import org.kafka.eagle.web.service.IClusterDaoService;
 import org.quartz.JobExecutionContext;
@@ -45,6 +46,7 @@ import java.util.Random;
  */
 @Component
 @Slf4j
+@QuartzJob(group = "INIT_GROUP", cron = "0 * * * * ?")
 public class MockJob extends QuartzJobBean {
 
     @Autowired

@@ -28,6 +28,7 @@ import org.kafka.eagle.pojo.cluster.ClusterInfo;
 import org.kafka.eagle.pojo.cluster.KafkaClientInfo;
 import org.kafka.eagle.pojo.consumer.ConsumerGroupInfo;
 import org.kafka.eagle.pojo.consumer.ConsumerGroupTopicInfo;
+import org.kafka.eagle.web.annotation.QuartzJob;
 import org.kafka.eagle.web.service.IBrokerDaoService;
 import org.kafka.eagle.web.service.IClusterDaoService;
 import org.kafka.eagle.web.service.IConsumerGroupTopicDaoService;
@@ -51,6 +52,7 @@ import java.util.Set;
  */
 @Component
 @Slf4j
+@QuartzJob(group = "INIT_GROUP", cron = "0 * * * * ?")
 public class ConsumerGroupTopicJob extends QuartzJobBean {
 
     @Autowired

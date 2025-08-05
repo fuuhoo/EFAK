@@ -1,5 +1,5 @@
 /**
- * ConsumerGroupJob.java
+ * QuartzJob.java
  * <p>
  * Copyright 2023 smartloli
  * <p>
@@ -25,6 +25,7 @@ import org.kafka.eagle.pojo.cluster.BrokerInfo;
 import org.kafka.eagle.pojo.cluster.ClusterInfo;
 import org.kafka.eagle.pojo.cluster.KafkaClientInfo;
 import org.kafka.eagle.pojo.consumer.ConsumerGroupInfo;
+import org.kafka.eagle.web.annotation.QuartzJob;
 import org.kafka.eagle.web.service.IBrokerDaoService;
 import org.kafka.eagle.web.service.IClusterDaoService;
 import org.kafka.eagle.web.service.IConsumerGroupDaoService;
@@ -47,6 +48,7 @@ import java.util.stream.Collectors;
  */
 @Component
 @Slf4j
+@QuartzJob(group = "INIT_GROUP", cron = "0 * * * * ?")
 public class ConsumerGroupJob extends QuartzJobBean {
 
     @Autowired

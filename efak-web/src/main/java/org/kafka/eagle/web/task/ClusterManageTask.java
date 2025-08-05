@@ -58,7 +58,7 @@ import java.util.*;
 //@Component
 //@EnableScheduling
 //@EnableAsync
-@Deprecated
+//@Deprecated
 public class ClusterManageTask {
 
     @Value("${efak.collect.retain}")
@@ -124,6 +124,7 @@ public class ClusterManageTask {
                 brokerInfo.setBrokerPortStatus(KafkaClusterFetcher.getBrokerStatus(clusterCreateInfo.getBrokerHost(), clusterCreateInfo.getBrokerPort()));
                 brokerInfo.setClusterId(clusterInfo.getClusterId());
                 this.brokerDaoService.update(brokerInfo);
+                log.info("更新broker信息");
 
                 brokerInfos.add(brokerInfo);
                 if (brokerInfos != null && brokerInfos.size() > KConstants.MYSQL_BATCH_SIZE) {

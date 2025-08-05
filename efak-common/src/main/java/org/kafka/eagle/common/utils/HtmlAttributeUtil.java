@@ -86,9 +86,11 @@ public class HtmlAttributeUtil {
     public static String getTopicSpreadHtml(int brokerSpread) {
         String result = "";
         if (brokerSpread < KConstants.Topic.TOPIC_BROKER_SPREAD_ERROR) {
-            result = "<span class='badge bg-danger'>异常</span>";
+            String msg="异常("+brokerSpread+"%)";
+            result = "<span class='badge bg-danger'>"+msg+"</span>";
         } else if (brokerSpread >= KConstants.Topic.TOPIC_BROKER_SPREAD_ERROR && brokerSpread < KConstants.Topic.TOPIC_BROKER_SPREAD_NORMAL) {
-            result = "<span class='badge bg-warning'>警告</span>";
+            String msg="告警("+brokerSpread+"%)";
+            result = "<span class='badge bg-danger'>"+msg+"</span>";
         } else if (brokerSpread >= KConstants.Topic.TOPIC_BROKER_SPREAD_NORMAL) {
             result = "<span class='badge bg-success'>健康</span>";
         } else {

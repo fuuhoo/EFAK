@@ -28,6 +28,7 @@ import org.kafka.eagle.pojo.cluster.ClusterInfo;
 import org.kafka.eagle.pojo.cluster.KafkaMBeanInfo;
 import org.kafka.eagle.pojo.kafka.JMXInitializeInfo;
 import org.kafka.eagle.pojo.topic.MBeanInfo;
+import org.kafka.eagle.web.annotation.QuartzJob;
 import org.kafka.eagle.web.service.IClusterCreateDaoService;
 import org.kafka.eagle.web.service.IClusterDaoService;
 import org.kafka.eagle.web.service.IKafkaMBeanDaoService;
@@ -51,6 +52,7 @@ import java.util.Map;
  */
 @Component
 @Slf4j
+@QuartzJob(group = "INIT_GROUP", cron = "0 * * * * ?")
 public class KafkaMetricJob extends QuartzJobBean {
 
     @Autowired

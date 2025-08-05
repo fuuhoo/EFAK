@@ -31,6 +31,7 @@ import org.kafka.eagle.pojo.cluster.KafkaClientInfo;
 import org.kafka.eagle.pojo.topic.MetadataInfo;
 import org.kafka.eagle.pojo.topic.TopicInfo;
 import org.kafka.eagle.pojo.topic.TopicMetadataInfo;
+import org.kafka.eagle.web.annotation.QuartzJob;
 import org.kafka.eagle.web.service.IBrokerDaoService;
 import org.kafka.eagle.web.service.IClusterDaoService;
 import org.kafka.eagle.web.service.ITopicDaoService;
@@ -50,6 +51,7 @@ import java.util.*;
  */
 @Component
 @Slf4j
+@QuartzJob(group = "INIT_GROUP", cron = "0 * * * * ?")
 public class TopicMetaJob extends QuartzJobBean {
 
     @Autowired

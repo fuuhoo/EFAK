@@ -21,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.kafka.eagle.core.kafka.KafkaClusterFetcher;
 import org.kafka.eagle.pojo.cluster.ClusterCreateInfo;
 import org.kafka.eagle.pojo.cluster.ClusterInfo;
+import org.kafka.eagle.web.annotation.QuartzJob;
 import org.kafka.eagle.web.service.IClusterCreateDaoService;
 import org.kafka.eagle.web.service.IClusterDaoService;
 import org.quartz.JobExecutionContext;
@@ -39,6 +40,7 @@ import java.util.List;
  */
 @Component
 @Slf4j
+@QuartzJob(group = "INIT_GROUP", cron = "0 * * * * ?")
 public class ClusterJob extends QuartzJobBean {
 
     @Autowired
